@@ -5,12 +5,12 @@ import pandas as pd
 import sys
 import joblib
 
-from ml.data import *
-from ml.model import *  
+from data import *
+from model import *  
 # Add the necessary imports for the starter code.
 
 # Add code to load in the data.
-data = pd.read_csv('../data/census.csv')
+data = pd.read_csv('./data/census.csv')
 
 data.columns = data.columns.str.strip()
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
@@ -43,6 +43,7 @@ y_pred = inference(model, X_test)
 
 precision, recall, fbeta = compute_model_metrics(y_test, y_pred)
 
+model_str_name = 'model_rf_classifier_v1'
 # save model
 joblib.dump(model, './model/{}.pkl'.format(model_str_name))
 
