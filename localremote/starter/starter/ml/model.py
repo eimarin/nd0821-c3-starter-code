@@ -17,8 +17,9 @@ def train_model(X_train, y_train):
     model
         Trained machine learning model.
     """
-
-    pass
+    random_Forest = RandomForestRegressor(n_estimators = 100, max_depth= 15)
+    random_Forest.fit(X_train, y_train)
+    return random_Forest
 
 
 def compute_model_metrics(y, preds):
@@ -57,4 +58,6 @@ def inference(model, X):
     preds : np.array
         Predictions from the model.
     """
-    pass
+    y_pred = model.predict(X)
+    return y_pred
+    
