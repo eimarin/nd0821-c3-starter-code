@@ -1,7 +1,7 @@
 Working in a command line environment is recommended for ease of use with git and dvc. If on Windows, WSL1 or 2 is recommended.
 
 # setup
-## Running pytest action base on this webpage:
+## Running pytest action base on this webpage link:
 
 https://thiagolopessilva.medium.com/running-unit-testing-on-github-action-using-pytest-61653d993c9c
 # Instrucions
