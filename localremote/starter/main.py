@@ -9,13 +9,15 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 import pandas as pd
-from data import *
-from model import *
 
 import json
 
 import sys
 sys.path.append("./localremote/starter/starter/ml")
+sys.path.append("./starter/ml")
+
+from data import *
+from model import *
 
 
 
@@ -88,23 +90,6 @@ async def run_inference_model(item: Item):
 	loaded_encoder = joblib.load(open(filename, 'rb'))
 	filename = './model/model_rf_classifier_v1_lb.pkl'
 	loaded_lb = joblib.load(open(filename, 'rb'))
-
-	print('numpy.__version__')
-	print(numpy.__version__)
-	
-	print('pd.__version__')
-	print(pd.__version__)
-
-	print('sklearn.__version__')
-	print(sklearn.__version__)
-
-	print('python version')
-	print(sys.version)
-
-
-	print(type(loaded_model))
-	print(type(loaded_encoder))
-	print(type(loaded_lb))
 
 	data_dict  = {
 		"age": age,
