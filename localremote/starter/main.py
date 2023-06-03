@@ -13,6 +13,8 @@ import pandas as pd
 from starter.ml.data import *
 from starter.ml.model import *
 import json
+import sys
+
 
 
 # Instantiate the app.
@@ -92,6 +94,9 @@ async def run_inference_model(item: Item):
 
 	print('sklearn.__version__')
 	print(sklearn.__version__)
+
+	print('python version')
+	print(sys.version)
 
 
 	print(type(loaded_model))

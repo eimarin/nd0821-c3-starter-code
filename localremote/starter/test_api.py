@@ -2,6 +2,7 @@ import requests
 import pytest
 import json
 
+
 @pytest.fixture(scope="session")
 def test_get():
 	response = requests.get('http://127.0.0.1:8000/')
