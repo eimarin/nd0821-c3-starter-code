@@ -1,0 +1,54 @@
+-- query
+-- dict
+{
+"age": 21,
+"workclass": "State-gov",
+"fnlgt": 77516,
+"education": "Bachelors",
+"education_num": 13,
+"marital_status": "Never-married",
+"occupation": "Adm-clerical",
+"relationship": "Not-in-family",
+"race": "White",
+"sex": "Male",
+"capital_gain":2174,
+"capital_loss": 0,
+"hours_per_week": 40,
+"native_country": "United-States"
+}
+
+
+{
+"age": 21,
+"workclass": "State-gov",
+"fnlgt": 77516,
+"education": "Bachelors",
+"education-num": 13,
+"marital-status": "Never-married",
+"occupation": "Adm-clerical",
+"relationship": "Not-in-family",
+"race": "White",
+"sex": "Male",
+"capital-gain":2174,
+"capital-loss": 0,
+"hours-per-week": 40,
+"native-country": "United-States"
+}
+
+
+
+-- values
+age = item.age
+workclass = item.workclass
+fnlgt = item.fnlgt
+education = item.education
+education_num = item.education_num
+marital_status = item.marital_status
+occupation = item.occupation
+relationship = item.relationship
+race = item.race
+sex = item.sex
+capital_gain = item.capital_gain
+capital_loss = item.capital_loss
+hours_per_week = item.hours_per_week
+native_country = item.native_country
