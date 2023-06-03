@@ -65,7 +65,7 @@ class Item(BaseModel):
 # Define a GET on the specified endpoint.
 @app.get("/")
 async def say_hello():
-    return {"greeting": "Welcome to the Deploying a Machine Learning Model with FastAPI project page "+str(pd.__version__) }
+    return {"greeting": "Welcome to the Deploying a Machine Learning Model with FastAPI project page "}
 
 @app.post("/run_model/")
 async def run_inference_model(item: Item):
