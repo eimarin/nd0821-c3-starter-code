@@ -9,9 +9,13 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 import pandas as pd
-from localremote.starter.ml.data import *
-from localremote.starter.ml.model import *
+from data import *
+from model import *
+
 import json
+
+import sys
+sys.path.insert(0, "./localremote/starter/starter/ml")
 
 
 
