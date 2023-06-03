@@ -5,7 +5,9 @@ import json
 
 @pytest.fixture(scope="session")
 def test_get():
-	response = requests.get('http://127.0.0.1:8000/')
+	# response = requests.get('http://127.0.0.1:8000/')
+	response = requests.get('https://test-udacity-app.onrender.com:10000/')
+	
 
 	assert response.status_code == 200
 	assert len(response.json()['greeting']) > 0
@@ -29,7 +31,8 @@ def test_post_1():
 	"native_country": "United-States"
 	}
 	data = json.dumps(data)
-	response = requests.post('http://127.0.0.1:8000/run_model', data=data)
+	# response = requests.post('http://127.0.0.1:8000/run_model', data=data)
+	response = requests.post('https://test-udacity-app.onrender.com:10000/run_model', data=data)
 	print(response.json())
 
 	assert response.status_code == 200
@@ -54,8 +57,8 @@ def test_post_2():
 	}
 	data = json.dumps(data)
 
-
-	response = requests.post('http://127.0.0.1:8000/run_model', data=data)
+	# response = requests.post('http://127.0.0.1:8000/run_model', data=data)
+	response = requests.post('https://test-udacity-app.onrender.com:10000/run_model', data=data)
 	print(response.json())
 
 	assert response.status_code == 200
