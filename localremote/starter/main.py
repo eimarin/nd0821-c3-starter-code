@@ -84,11 +84,11 @@ async def run_inference_model(item: Item):
 	hours_per_week = item.hours_per_week
 	native_country = item.native_country
 	# load model
-	filename = './model/model_rf_classifier_v1.pkl'
+	filename = './localremote/starter/model/model_rf_classifier_v1.pkl'
 	loaded_model = joblib.load(open(filename, 'rb'))
-	filename = './model/model_rf_classifier_v1_encoder.pkl'
+	filename = './localremote/starter/model/model_rf_classifier_v1_encoder.pkl'
 	loaded_encoder = joblib.load(open(filename, 'rb'))
-	filename = './model/model_rf_classifier_v1_lb.pkl'
+	filename = './localremote/starter/model/model_rf_classifier_v1_lb.pkl'
 	loaded_lb = joblib.load(open(filename, 'rb'))
 
 	data_dict  = {
