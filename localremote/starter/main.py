@@ -15,7 +15,8 @@ from model import *
 import json
 
 import sys
-sys.path.insert(0, "./localremote/starter/starter/ml")
+sys.path.append("./localremote/starter/starter/ml")
+
 
 
 
