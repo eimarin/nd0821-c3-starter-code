@@ -5,7 +5,7 @@ import json
 
 @pytest.fixture(scope="session")
 def test_get():
-	response = requests.get('https://test-udacity-app.onrender.com:10000/')
+ 	response = requests.get('https://test-udacity-app.onrender.com:10000/')
 
 	assert response.status_code == 200
 	assert len(response.json()['greeting']) > 0

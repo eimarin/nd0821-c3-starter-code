@@ -1,5 +1,4 @@
 -- query
--- dict
 {
 "age": 21,
 "workclass": "State-gov",
@@ -17,27 +16,7 @@
 "native_country": "United-States"
 }
 
-
-{
-"age": 21,
-"workclass": "State-gov",
-"fnlgt": 77516,
-"education": "Bachelors",
-"education-num": 13,
-"marital-status": "Never-married",
-"occupation": "Adm-clerical",
-"relationship": "Not-in-family",
-"race": "White",
-"sex": "Male",
-"capital-gain":2174,
-"capital-loss": 0,
-"hours-per-week": 40,
-"native-country": "United-States"
-}
-
-
-
--- values
+--
 age = item.age
 workclass = item.workclass
 fnlgt = item.fnlgt
@@ -52,3 +31,7 @@ capital_gain = item.capital_gain
 capital_loss = item.capital_loss
 hours_per_week = item.hours_per_week
 native_country = item.native_country
+
+
+
+'age','workclass','fnlgt','education','education_num','marital_status','occupation','relationship','race','sex','capital_gain','capital_loss','hours_per_week','native_country'
