@@ -2,6 +2,9 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
+import sklearn
+import numpy
+import pandas
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
@@ -80,6 +83,16 @@ async def run_inference_model(item: Item):
 	loaded_encoder = joblib.load(open(filename, 'rb'))
 	filename = './model/model_rf_classifier_v1_lb.pkl'
 	loaded_lb = joblib.load(open(filename, 'rb'))
+
+	print('numpy.__version__')
+	print(numpy.__version__)
+	
+	print('pd.__version__')
+	print(pd.__version__)
+
+	print('sklearn.__version__')
+	print(sklearn.__version__)
+
 
 	print(type(loaded_model))
 	print(type(loaded_encoder))
