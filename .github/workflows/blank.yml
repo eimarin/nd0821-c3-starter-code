@@ -31,4 +31,4 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
-          python -m ./localremote/starter/pytest test_api.py
+          python -m pytest ./localremote/starter/test_api.py
