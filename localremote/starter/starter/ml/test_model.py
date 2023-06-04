@@ -5,20 +5,27 @@ import pandas as pd
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from data import *
-from model import *
+from sklearn.model_selection import train_test_split
+import sklearn
+import numpy
+
+import sys
+sys.path.append("./localremote/starter/starter/ml")
+sys.path.append("./starter/ml")
+
+from data import process_data
+from model import train_model, compute_model_metrics, inference
 
 
 @pytest.fixture(scope="session")
 def data():
     df = pd.read_csv('../../data/census.csv')
-
     return df
 
-# Optional: implement hyperparameter tuning.
-def test_process_data(process_data):
-    df = data()
-    train, test = train_test_split(data, test_size=0.20)
+# # Optional: implement hyperparameter tuning.
+def test_process_data():
+    df = pd.read_csv('./data/census.csv')
+    train, test = train_test_split(df, test_size=0.20)
     cat_features = [
     "workclass",
     "education",
@@ -30,16 +37,19 @@ def test_process_data(process_data):
     "native-country",
     ]
     X_train, y_train, encoder, lb = process_data( train, categorical_features=cat_features, label="salary", training=True)
-    assert isinstance(X_train, pd.DataFrame)
-    assert isinstance(encoder, pd.DataFrame)
+    assert isinstance(X_train, numpy.ndarray)
+    assert isinstance(encoder, sklearn.preprocessing._encoders.OneHotEncoder)
 
-def test_train_model(train_model):
+
+def test_train_model():
     '''
     test the funciton train models
     '''
-
-    df = data()
-    train, test = train_test_split(data, test_size=0.20)
+    print('test_train_model start')
+    # df = data()
+    # df = pd.read_csv('../../data/census.csv')
+    df = pd.read_csv('./data/census.csv')
+    train, test = train_test_split(df, test_size=0.20)
     cat_features = [
     "workclass",
     "education",
@@ -50,17 +60,22 @@ def test_train_model(train_model):
     "sex",
     "native-country",
     ]
+    print('--train_test_split section ok')
     X_train, y_train, encoder, lb = process_data( train, categorical_features=cat_features, label="salary", training=True)
+    print('--process_data section ok')
     model = train_model(X_train, y_train)
-    assert isinstance(model, pd.DataFrame)
+    print('--train_model section ok')
+    assert isinstance(model, sklearn.linear_model._logistic.LogisticRegression)
 
-def test_train_model(train_model):
+def test_inference():
     '''
-    test the funciton train models
+    test the funciton inference models
     '''
-
-    df = data()
-    train, test = train_test_split(data, test_size=0.20)
+    print('test_train_model start')
+    # df = data()
+    # df = pd.read_csv('../../data/census.csv')
+    df = pd.read_csv('./data/census.csv')
+    train, test = train_test_split(df, test_size=0.20)
     cat_features = [
     "workclass",
     "education",
@@ -71,8 +86,17 @@ def test_train_model(train_model):
     "sex",
     "native-country",
     ]
-    X_train, y_train, encoder, lb = process_data( train, categorical_features=cat_features, label="salary", training=True)
+    print('--train_test_split section ok')
+    X_train, y_train, encoder, lb = process_data( train
+        , categorical_features=cat_features, label="salary", training=True)
+    X_test, y_test, encoder, lb = process_data(
+        test, categorical_features=cat_features, label="salary", training=False,
+        encoder=encoder, lb=lb)
+    print('--process_data section ok')
     model = train_model(X_train, y_train)
-    assert isinstance(model, pd.DataFrame)
+    print('--train_model section ok')
+    y_pred = inference(model, X_test)
+    print('--train_model section ok')
+    assert isinstance(y_pred, numpy.ndarray)
 
   
