@@ -4,6 +4,27 @@ Working in a command line environment is recommended for ease of use with git an
 ## Running pytest action base on this webpage:
 
 https://thiagolopessilva.medium.com/running-unit-testing-on-github-action-using-pytest-61653d993c9c
+
+## Github Repo
+https://github.com/eimarin/nd0821-c3-starter-code
+
+## Render Links
+It takes a couple of miniutes to initialize, as its the free version. Refer to the do s page to thes the Post method. Screenshots of the live 
+demos working provided.
+https://test-udacity-app.onrender.com/
+https://test-udacity-app.onrender.com/docs
+
+## Screenshots
+Provided in the main folder of the github repo
+
+## Model card
+It is provided in the same place as the original repo ./starter/model_card_template.md
+
+## Common mistakes reviews commentse
+- I. FastAPI documentation includes example values
+- II. Two test cases provided for the post method (one for <50K and >50K)
+- I. FastAPI documentation includes example values
+
 # Instrucions
 # Environment Set up
 * Download and install conda if you don’t have it already.
