@@ -2,11 +2,9 @@ import requests
 import pytest
 import json
 
-
-@pytest.fixture(scope="session")
 def test_get():
 	# response = requests.get('http://127.0.0.1:8000/')
-	response = requests.get('https://test-udacity-app.onrender.com:10000/')
+	response = requests.get('https://test-udacity-app.onrender.com/')
 	
 
 	assert response.status_code == 200
@@ -32,7 +30,8 @@ def test_post_1():
 	}
 	data = json.dumps(data)
 	# response = requests.post('http://127.0.0.1:8000/run_model', data=data)
-	response = requests.post('https://test-udacity-app.onrender.com:10000/run_model', data=data)
+	response = requests.post('https://test-udacity-app.onrender.com/run_model', data=data)
+	print(response)
 	print(response.json())
 
 	assert response.status_code == 200
@@ -58,8 +57,11 @@ def test_post_2():
 	data = json.dumps(data)
 
 	# response = requests.post('http://127.0.0.1:8000/run_model', data=data)
-	response = requests.post('https://test-udacity-app.onrender.com:10000/run_model', data=data)
+	response = requests.post('https://test-udacity-app.onrender.com/run_model', data=data)
 	print(response.json())
 
 	assert response.status_code == 200
 	assert response.json()['pred_number'] == '1'
+
+if __name__=='__main__':
+	test_post_1()

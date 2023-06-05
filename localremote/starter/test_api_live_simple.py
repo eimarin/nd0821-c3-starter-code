@@ -21,7 +21,7 @@ data = {
 data = json.dumps(data)
 # response = requests.post('https://test-udacity-app.onrender.com:10000/run_model', data=data)
 
-response = requests.get('https://test-udacity-app.onrender.com:10000/')
+response = requests.get('https://test-udacity-app.onrender.com/api')
 
 
 # response = requests.post('http://127.0.0.1:8000/run_model', data=data)

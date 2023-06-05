@@ -139,8 +139,7 @@ async def run_inference_model(item: Item):
     y_pred_label = y_pred_label[0]
     print('y_pred_label')
     print(y_pred_label)
-    out = '{ "pred_number":"' + str(y_pred) + '","pred_label":"'
-    + str(y_pred_label) + '"}'
+    out = '{ "pred_number":"' + str(y_pred) + '","pred_label":"' + str(y_pred_label) + '"}'
     print(out)
     out = json.loads(out)
     return out
