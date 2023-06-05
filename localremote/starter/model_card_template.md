@@ -60,3 +60,8 @@ precision,0.6052631578947368
 
 
 ## Caveats and Recommendations
+
+- The dataset is from 1994, so this is inly for educaitonal purposes. A similar approach with newer data and a new threshold (because the 50K limit should
+change due to inflation)
+- A simple model was used to ilustrative processes, a more complex model such as a randomforest should consider overfitting considerations, as it might
+be better with bias, however it could be overfitting on the data
