@@ -14,13 +14,13 @@ from model import train_model, inference  # noqa: E402
 
 @pytest.fixture(scope="session")
 def data():
-    df = pd.read_csv('../../data/census.csv')
+    df = pd.read_csv('localremote/starter/data/census.csv')
     return df
 
 
 # # Optional: implement hyperparameter tuning.
 def test_process_data():
-    df = pd.read_csv('./data/census.csv')
+    df = pd.read_csv('localremote/starter/data/census.csv')
     train, test = train_test_split(df, test_size=0.20)
     cat_features = [
         "workclass",
@@ -44,7 +44,7 @@ def test_train_model():
     print('test_train_model start')
     # df = data()
     # df = pd.read_csv('../../data/census.csv')
-    df = pd.read_csv('./data/census.csv')
+    df = pd.read_csv('localremote/starter/data/census.csv')
     train, test = train_test_split(df, test_size=0.20)
     cat_features = [
         "workclass",
@@ -71,7 +71,7 @@ def test_inference():
     print('test_train_model start')
     # df = data()
     # df = pd.read_csv('../../data/census.csv')
-    df = pd.read_csv('./data/census.csv')
+    df = pd.read_csv('localremote/starter/data/census.csv')
     train, test = train_test_split(df, test_size=0.20)
     cat_features = [
         "workclass",
