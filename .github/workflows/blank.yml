@@ -43,5 +43,5 @@ jobs:
           echo Add other actions to build,
           flake8 . --count --statistics  --ignore=E501 --exclude sanitycheck.py,
           python -m pytest ./localremote/starter/test_api.py,
-          python -m pytest ./localremote/starter/starter/ml/test_model.py
+          python -m pytest ./localremote/starter/ml/test_model.py
           
