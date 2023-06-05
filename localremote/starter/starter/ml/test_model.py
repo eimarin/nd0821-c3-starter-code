@@ -83,6 +83,7 @@ def test_inference():
         "sex",
         "native-country",
     ]
+    # clean
     print('--train_test_split section ok')
     res = process_data(train, categorical_features=cat_features
                         ,label="salary", training=True)
