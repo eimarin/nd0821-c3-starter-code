@@ -67,6 +67,11 @@ async def say_hello():
     return {"greeting": """Welcome to the Deploying a Machine Learning Model
     with FastAPI project page"""}
 
+@app.get("/api")
+async def say_hello2():
+    return {"greeting": """Welcome to the Deploying a Machine Learning Model
+    with FastAPI project page"""}
+
 
 @app.post("/run_model/")
 async def run_inference_model(item: Item):
