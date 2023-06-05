@@ -57,8 +57,8 @@ class Item(BaseModel):
             "capital_loss": 0,
             "hours_per_week": 40,
             "native_country": "United-States"
-                                }
-                                }
+        }
+        }
 
 
 # Define a GET on the specified endpoint.
@@ -107,7 +107,7 @@ async def run_inference_model(item: Item):
         "hours-per-week": hours_per_week,
         "native-country": native_country,
         "salary": 'NA'
-        }
+    }
     test = pd.DataFrame(columns=[
         'age', 'workclass', 'fnlgt',
         'education', 'education-num', 'marital-status', 'occupation',

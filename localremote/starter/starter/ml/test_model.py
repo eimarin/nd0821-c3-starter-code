@@ -8,8 +8,8 @@ import numpy
 import sys
 sys.path.append("./localremote/starter/starter/ml")
 sys.path.append("./starter/ml")
-from data import process_data # noqa: E402
-from model import train_model, inference # noqa: E402
+from data import process_data  # noqa: E402
+from model import train_model, inference  # noqa: E402
 
 
 @pytest.fixture(scope="session")
@@ -22,7 +22,8 @@ def data():
 def test_process_data():
     df = pd.read_csv('./data/census.csv')
     train, test = train_test_split(df, test_size=0.20)
-    cat_features = ["workclass",
+    cat_features = [
+        "workclass",
         "education",
         "marital-status",
         "occupation",
@@ -30,7 +31,7 @@ def test_process_data():
         "race",
         "sex",
         "native-country",
-        ]
+    ]
     X_train, y_train, encoder, lb = process_data(train, categorical_features=cat_features, label="salary", training=True)
     assert isinstance(X_train, numpy.ndarray)
     assert isinstance(encoder, sklearn.preprocessing._encoders.OneHotEncoder)
@@ -45,7 +46,8 @@ def test_train_model():
     # df = pd.read_csv('../../data/census.csv')
     df = pd.read_csv('./data/census.csv')
     train, test = train_test_split(df, test_size=0.20)
-    cat_features = ["workclass",
+    cat_features = [
+        "workclass",
         "education",
         "marital-status",
         "occupation",
@@ -53,7 +55,7 @@ def test_train_model():
         "race",
         "sex",
         "native-country",
-        ]
+    ]
     print('--train_test_split section ok')
     X_train, y_train, encoder, lb = process_data(train, categorical_features=cat_features, label="salary", training=True)
     print('--process_data section ok')
@@ -70,7 +72,8 @@ def test_inference():
     # df = pd.read_csv('../../data/census.csv')
     df = pd.read_csv('./data/census.csv')
     train, test = train_test_split(df, test_size=0.20)
-    cat_features = ["workclass",
+    cat_features = [
+        "workclass",
         "education",
         "marital-status",
         "occupation",
@@ -78,7 +81,7 @@ def test_inference():
         "race",
         "sex",
         "native-country",
-        ]
+    ]
     print('--train_test_split section ok')
     X_train, y_train, encoder, lb = process_data(train,
         categorical_features=cat_features, label="salary", training=True)
@@ -91,5 +94,3 @@ def test_inference():
     y_pred = inference(model, X_test)
     print('--train_model section ok')
     assert isinstance(y_pred, numpy.ndarray)
-
-  
