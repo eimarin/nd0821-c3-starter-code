@@ -57,18 +57,13 @@ class Item(BaseModel):
             "capital_loss": 0,
             "hours_per_week": 40,
             "native_country": "United-States"
-            }
+                                    }
         }
 
 
 # Define a GET on the specified endpoint.
 @app.get("/")
 async def say_hello():
-    return {"greeting": """Welcome to the Deploying a Machine Learning Model
-    with FastAPI project page"""}
-
-@app.get("/api")
-async def say_hello2():
     return {"greeting": """Welcome to the Deploying a Machine Learning Model
     with FastAPI project page"""}
 

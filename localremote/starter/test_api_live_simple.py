@@ -19,14 +19,10 @@ data = {
 	"native_country": "United-States"
 	}
 data = json.dumps(data)
-# response = requests.post('https://test-udacity-app.onrender.com:10000/run_model', data=data)
 
 response = requests.get('https://test-udacity-app.onrender.com/api')
 
-
-# response = requests.post('http://127.0.0.1:8000/run_model', data=data)
 print(response.json())
 print(response)
 
 assert response.status_code == 200
-# assert response.json()['pred_number'] == '0'

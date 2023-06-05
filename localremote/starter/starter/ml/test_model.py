@@ -1,10 +1,6 @@
 import pytest
 import pandas as pd
 
-
-from sklearn.metrics import fbeta_score, precision_score, recall_score
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 import sklearn
 import numpy
@@ -12,9 +8,8 @@ import numpy
 import sys
 sys.path.append("./localremote/starter/starter/ml")
 sys.path.append("./starter/ml")
-
-from data import process_data
-from model import train_model, compute_model_metrics, inference
+from data import process_data # noqa: E402
+from model import train_model, compute_model_metrics, inference # noqa: E402
 
 
 @pytest.fixture(scope="session")

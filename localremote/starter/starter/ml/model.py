@@ -1,5 +1,4 @@
 from sklearn.metrics import fbeta_score, precision_score, recall_score
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 
 
@@ -63,4 +62,3 @@ def inference(model, X):
     """
     y_pred = model.predict(X)
     return y_pred
-    
