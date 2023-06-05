@@ -43,7 +43,7 @@ jobs:
       
       # Runs a single command using the runners shell
       - name: Run flake8
-        run: lake8 . --count --statistics  --ignore=E501 --exclude sanitycheck.py
+        run: flake8 . --count --statistics  --ignore=E501 --exclude sanitycheck.py
         
       # Runs a single command using the runners shell
       - name: Run pytest
