@@ -26,6 +26,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install pytest
         run: pip install pytest
+        
+      # Runs a single command using the runners shell
+      - name: Install pandas
+        run: pip install pandas
       
       # Runs a single command using the runners shell
       - name: Install flake8
