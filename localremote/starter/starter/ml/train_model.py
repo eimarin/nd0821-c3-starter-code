@@ -23,7 +23,7 @@ def metrics_based_slice(model, test, slice_column, encoder, lb):
         out_str += 'precision,' + str(precision) + '\n'
         out_str += 'recall,' + str(recall) + '\n'
         out_str += 'fbeta,' + str(fbeta) + '\n'
-        out_str += 38*'-' + '\n'
+        out_str += 38 * '-' + '\n'
     return out_str
 
 
@@ -73,17 +73,17 @@ joblib.dump(lb, './model/{}_lb.pkl'.format(model_str_name))
 # https://knowledge.udacity.com/questions/909273
 with open('slice_output.txt', 'w') as out:
     for slice_column in cat_features:
-        out_str = 38*'#' + '\n'
+        out_str = 38 * '#' + '\n'
         out_str += 'OVERALL' + '\n'
-        out_str += 38*'#' + '\n'
+        out_str += 38 * '#' + '\n'
         out_str += 'precision,' + str(precision) + '\n'
         out_str += 'recall,' + str(recall) + '\n'
         out_str += 'fbeta,' + str(fbeta) + '\n'
         out_str += 38*'-' + '\n'
         out.write(out_str)
 
-        out.write(38*'#' + '\n')
+        out.write(38 * '#' + '\n')
         out.write(slice_column + '\n')
-        out.write(38*'#' + '\n')
+        out.write(38 * '#' + '\n')
         out_str = metrics_based_slice(model, test, slice_column, encoder, lb)
         out.write(out_str)
