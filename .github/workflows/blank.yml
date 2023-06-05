@@ -27,9 +27,9 @@ jobs:
       - name: Install pytest
         run: pip install pytest
         
-      # Runs a single command using the runners shell
+      # install requirements
       - name: Install pandas
-        run: pip install pandas
+        run: pip install -r ./localremote/starter/requirements.txt
       
       # Runs a single command using the runners shell
       - name: Install flake8
