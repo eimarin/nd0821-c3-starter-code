@@ -86,11 +86,11 @@ def test_inference():
     # clean
     print('--train_test_split section ok')
     res = process_data(train, categorical_features=cat_features,
-                        label="salary", training=True)
+                       label="salary", training=True)
     X_train, y_train, encoder, lb = res
     res = process_data(test, categorical_features=cat_features,
-                        label="salary", training=False,encoder=encoder,
-                        lb=lb)
+                       label="salary", training=False, encoder=encoder,
+                       lb=lb)
     X_test, y_test, encoder, lb = res
 
     print('--process_data section ok')
