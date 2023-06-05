@@ -79,7 +79,7 @@ with open('slice_output.txt', 'w') as out:
         out_str += 'precision,' + str(precision) + '\n'
         out_str += 'recall,' + str(recall) + '\n'
         out_str += 'fbeta,' + str(fbeta) + '\n'
-        out_str += 38*'-' + '\n'
+        out_str += 38 * '-' + '\n'
         out.write(out_str)
 
         out.write(38 * '#' + '\n')

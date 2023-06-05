@@ -57,8 +57,8 @@ class Item(BaseModel):
             "capital_loss": 0,
             "hours_per_week": 40,
             "native_country": "United-States"
-                                    }
-        }
+                                }
+                                }
 
 
 # Define a GET on the specified endpoint.
