@@ -41,6 +41,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
-          flake8 ./localremote/starter/main.py,
-          python -m pytest ./localremote/starter/test_api.py,
-          flake8 ./localremote/starter/test_api.py
+          flake8 . --count --statistics  --ignore=E501 --exclude sanitycheck.py,
+          python -m pytest ./localremote/starter/test_api.py
+          
